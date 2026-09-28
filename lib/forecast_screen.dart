@@ -44,8 +44,24 @@ class IslandHeader extends StatelessWidget {
               ),
             ),
           ),
-          // TODO 2: add the island name at the bottom left (Positioned) and
-          // a Chip with the weather description at the top right.
+          // Step 2: children with a Positioned go where you say; the rest of
+          // the Stack stays underneath.
+          Positioned(
+            left: 16,
+            bottom: 16,
+            child: Text(
+              currentIsland.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium
+                  ?.copyWith(color: Colors.white),
+            ),
+          ),
+          Positioned(
+            top: 12,
+            right: 12,
+            child: Chip(label: Text(forecasts.first.type.description)),
+          ),
         ],
       ),
     );
