@@ -72,13 +72,13 @@ class CurrentConditions extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        // TODO 1: this Row overflows on a phone (yellow and black stripes).
-        // Fix it so the three values share the width equally.
+        // Step 1: Expanded gives each value a third of the width, whatever
+        // the phone. A fixed width overflows on narrow screens.
         Row(
           children: [
-            SizedBox(width: 160, child: _Measure('Mín', '${today.tMin.round()} °C')),
-            SizedBox(width: 160, child: _Measure('Máx', '${today.tMax.round()} °C')),
-            SizedBox(width: 160, child: _Measure('Chuva', '${today.rainChance} %')),
+            Expanded(child: _Measure('Mín', '${today.tMin.round()} °C')),
+            Expanded(child: _Measure('Máx', '${today.tMax.round()} °C')),
+            Expanded(child: _Measure('Chuva', '${today.rainChance} %')),
           ],
         ),
       ],
