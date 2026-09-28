@@ -8,8 +8,9 @@ Repositório da aula 6 de PDM (Programação para Dispositivos Móveis), CTeSP D
 git clone https://github.com/Tiago-Rocha/pdm-aula-06.git
 cd pdm-aula-06
 flutter pub get
-flutter run
 ```
+
+Abre a pasta no VS Code. `Ctrl+Shift+P` → *Flutter: Select Device* → o teu Android. Depois F5: corre a configuração "Tempo Açores (debug)" que já vem no projeto, em `.vscode/launch.json`.
 
 A app é a Tempo Açores tal como ficou no fim da aula 5, mais o ecrã de previsão em `lib/forecast_screen.dart`. É aí que trabalhas. `lib/data.dart` tem os dados estáticos e não se altera.
 
@@ -38,7 +39,7 @@ No fim de cada passo, quer tenhas acabado quer não, corre a linha do slide. Gua
 git stash -u && git checkout passo-1 && flutter pub get
 ```
 
-Depois, na app a correr, carrega em `R` (hot restart). Se o `pubspec.yaml` ou os assets tiverem mudado, pára com `q` e volta a fazer `flutter run`.
+Depois, no VS Code, hot restart com o botão ↻ da barra de depuração. Se o `pubspec.yaml` ou os assets tiverem mudado, pára a app (■) e F5 outra vez.
 
 Para voltares ao início: `git stash -u && git checkout main`.
 
