@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'day_chip.dart';
 
 /// Forecast screen for one location. This is where you work today.
 class ForecastScreen extends StatelessWidget {
@@ -134,13 +135,8 @@ class DaysRow extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: forecasts.length,
         separatorBuilder: (_, _) => const SizedBox(width: 8),
-        // TODO 3: create lib/day_chip.dart with a DayChip widget (a Card with
-        // the weekday, the icon and the max temperature) and use it here:
-        // itemBuilder: (_, i) => DayChip(forecast: forecasts[i]),
-        itemBuilder: (_, i) => SizedBox(
-          width: 72,
-          child: Card(child: Center(child: Text(forecasts[i].weekday))),
-        ),
+        // Step 3: one DayChip per day, built only when it scrolls into view.
+        itemBuilder: (_, i) => DayChip(forecast: forecasts[i]),
       ),
     );
   }
