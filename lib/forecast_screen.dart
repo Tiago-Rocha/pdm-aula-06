@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'day_chip.dart';
+import 'island_card.dart';
 
 /// Forecast screen for one location. This is where you work today.
 class ForecastScreen extends StatelessWidget {
@@ -192,8 +193,7 @@ class DetailCard extends StatelessWidget {
 /// The nine islands in a grid. Already done: read it, we talk about it in
 /// the theory part (GridView, shrinkWrap inside a ListView).
 ///
-/// TODO 4 (optional): extract the Card below into lib/island_card.dart as
-/// IslandCard(island: i), the same way you did with DayChip.
+/// Step 4: each cell is an IslandCard, extracted to its own file.
 class IslandsGrid extends StatelessWidget {
   const IslandsGrid({super.key});
 
@@ -206,22 +206,7 @@ class IslandsGrid extends StatelessWidget {
       crossAxisSpacing: 8,
       shrinkWrap: true, // takes only the height it needs, inside the ListView
       physics: const NeverScrollableScrollPhysics(), // the ListView scrolls
-      children: [
-        for (final i in islands)
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(child: Image.asset(i.image, fit: BoxFit.cover)),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(i.name, textAlign: TextAlign.center),
-                ),
-              ],
-            ),
-          ),
-      ],
+      children: [for (final i in islands) IslandCard(island: i)],
     );
   }
 }
