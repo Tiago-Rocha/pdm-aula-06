@@ -29,6 +29,7 @@ class IslandHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return SizedBox(
       height: 200,
       child: Stack(
@@ -51,10 +52,7 @@ class IslandHeader extends StatelessWidget {
             bottom: 16,
             child: Text(
               currentIsland.name,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineMedium
-                  ?.copyWith(color: Colors.white),
+              style: textTheme.headlineMedium?.copyWith(color: Colors.white),
             ),
           ),
           Positioned(
