@@ -33,15 +33,17 @@ O repositório tem um branch por passo. `main` é o ponto de partida; `passo-4` 
 
 ## Sincronizar com a aula
 
-No fim de cada passo, quer tenhas acabado quer não, corre a linha do slide. Guarda o que fizeste e põe-te no código desse passo:
+No fim de cada passo, quer tenhas acabado quer não, corre os comandos do slide, um de cada vez. Guardam o que fizeste e põem-te no código desse passo:
 
 ```bash
-git stash -u && git checkout passo-1 && flutter pub get
+git stash -u
+git checkout passo-1
+flutter pub get
 ```
 
 Depois, no VS Code, hot restart com o botão ↻ da barra de depuração. Se o `pubspec.yaml` ou os assets tiverem mudado, pára a app (■) e F5 outra vez.
 
-Para voltares ao início: `git stash -u && git checkout main`.
+Para voltares ao início: `git stash -u` e depois `git checkout main`.
 
 ## Créditos
 
